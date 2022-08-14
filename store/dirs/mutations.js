@@ -3,6 +3,7 @@ export default {
     state.dirs = payload;
   },
   CHANGE_NODE(state, payload) {
+    // ищем нужный обьект с помощью рекурсии и изменяем
     let search = (files) => {
       let isFound = false;
       files.forEach((item) => {
@@ -17,6 +18,7 @@ export default {
     search(state.dirs);
   },
   DELETE_NODE(state, payload) {
+    // ищем нужный обьект с помощью рекурсии и удаляем
     let search = (files) => {
       let isFound = false;
       files.forEach((item, idx) => {

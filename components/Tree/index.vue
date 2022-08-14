@@ -18,17 +18,21 @@ import {mapGetters} from "vuex";
 export default {
   name: "Tree",
   components: {
+    // узел файловой системы
     NodeTree,
   },
   async created() {
+    // запрос на получение данных
     await this.getDirsData();
   },
   computed: {
     ...mapGetters({
+      // данные файловой системы
       dataDirs: 'dirs/getDirs',
     }),
   },
   methods: {
+    // запрос на получение данных
     async getDirsData() {
       await this.$store.dispatch('dirs/getDirs')
     },

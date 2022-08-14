@@ -1,4 +1,5 @@
 <template>
+  <!-- узлы ветвей файлового дерева -->
   <li class="node-tree">
     <div
       class="node-tree__name"
@@ -17,11 +18,13 @@
           src="~static/images/file.png"
           alt="iconType"
         >
+        <!--  название узла    -->
         <span
           :class="{ 'hide' : changeText }"
         >
           {{ node.name }}
         </span>
+        <!--  поле ввода нового названия    -->
         <input
           type="text"
           class="node-tree__change-name-input"
@@ -29,7 +32,9 @@
           v-model="text"
         >
       </div>
+      <!--  управление узлами    -->
       <div class="node-tree__tools">
+        <!--    изменение    -->
         <img
           class="node-tree__tool"
           :class="{ 'node-tree__tool_active': changeText }"
@@ -37,6 +42,7 @@
           alt="change"
           @click="changeNode(node.id, node.name)"
         >
+        <!--    удаление    -->
         <img
           class="node-tree__tool"
           src="~static/images/delete.png"
@@ -46,6 +52,7 @@
       </div>
     </div>
 
+    <!--  новые узлы добавляются в ветвь пока в атрибуте files у узла есть элементы  -->
     <ul v-if="node.files && node.files.length">
       <node
         v-for="(file, idx) in node.files"
@@ -70,12 +77,17 @@ export default {
     },
   },
   data: () => ({
+    // отслеживание состояния изменения узла
     changeText: false,
+    // текущее название узла отображаемое в поле ввода
     text: '',
+    // слепок названия узла для сверки после изменения
     castText: '',
   }),
   methods: {
+    // изменение названия узла
     async changeNode(id, name) {
+      // если название поменялось после изменения записываем новое название и прекращаем изменение поля
       if (this.changeText && this.text !== this.castText) {
         const payload = {
           id,
@@ -83,11 +95,13 @@ export default {
         }
         await this.$store.dispatch('dirs/changeNode', payload);
       } else {
+        // заполняем атрибуты перед изменением поля
         this.castText = name;
         this.text = name;
       }
       this.changeText = !this.changeText;
     },
+    // удаление узла
     async deleteNode(id) {
       await this.$store.dispatch('dirs/deleteNode', {id});
     },

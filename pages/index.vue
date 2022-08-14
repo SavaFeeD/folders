@@ -1,4 +1,5 @@
 <template>
+<!-- страница с файловой системой -->
   <div class="index container">
     <h1 class="index__header">
       <img
@@ -8,7 +9,7 @@
       <span class="header__text">File System _</span>
     </h1>
     <div class="index__content">
-      <tree></tree>
+      <tree />
     </div>
   </div>
 </template>
@@ -19,6 +20,7 @@ import Tree from '../components/Tree';
 export default {
   name: 'IndexPage',
   components: {
+    // корень файловой системы
     Tree,
   },
 };
