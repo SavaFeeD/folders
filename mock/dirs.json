@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "Carps",
+    "type": "folder",
+    "files": [
+      {
+        "id": 1,
+        "name": "Carp black.jpg",
+        "type": "file",
+        "href": "#"
+      },
+      {
+        "id": 2,
+        "name": "Compilation carp.pdf",
+        "type": "file",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ships",
+    "type": "folder",
+    "files": [
+      {
+        "id": 4,
+        "name": "Wave queen.jpg",
+        "type": "file",
+        "href": "#"
+      },
+      {
+        "id": 5,
+        "name": "Hanamura.jpg",
+        "type": "file",
+        "href": "#"
+      },
+      {
+        "id": 6,
+        "name": "Red wings.jpg",
+        "type": "file",
+        "href": "#"
+      },
+      {
+        "id": 7,
+        "name": "Void folder",
+        "type": "folder",
+        "files": []
+      },
+      {
+        "id": 8,
+        "name": "Many folders",
+        "type": "folder",
+        "files": [
+          {
+            "id": 9,
+            "name": "Void folder",
+            "type": "folder",
+            "files": []
+          },
+          {
+            "id": 10,
+            "name": "Many folders",
+            "type": "folder",
+            "files": [
+              {
+                "id": 11,
+                "name": "Void folder",
+                "type": "folder",
+                "files": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
